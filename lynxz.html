@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title id = "title">
+            Lynxz
+        </title>
+        
+    </head>
+    <body>
+        <a href="http://16jrrath.wix.com/lynxz" target="_blank">Lynxz! Site</a>
+        <br>
+        <br>
+        <a id="heading1"></a>
+        <a id="wgooh"></a>
+        <br>
+        <br>
+        <a id="heading2"></a>
+        <a id="hey"></a>
+        <br>
+        <br>
+        <a href="https://mail.google.com/mail/u/0/?shva=1#inbox" target="_blank">Gmail</a>
+        &nbsp;
+        <a href="https://drive.google.com/a/sheboyganfalls.k12.wi.us/#my-drive" target="_blank">Google Drive</a>
+        &nbsp;
+        <a href="https://classroom.google.com/a/sheboyganfalls.k12.wi.us/" target="_blank">Google Classroom</a>
+        
+        <br>
+        <br>
+        <a href="https://www.google.com/accounts/ServiceLoginAuth?continue=http://google.com/&Email=@sheboyganfalls.k12.wi.us&Passwd=&null=Sign+in" target="_blank">Google Sign In</a>
+        (automatically fills in the @sheboyganfalls.k12.wi.us)
+        
+        <br>
+        <br>
+        <a href="http://powerschool.sheboyganfalls.k12.wi.us/public/" target="_blank">PowerSchool</a>
+        &nbsp;
+        <a href="http://www.vocesetextbooks.com/Voces2/etextbook.php?pid=241" target="_blank">Voces</a>
+        &nbsp;
+        <a href="http://www.wix.com/my-account?pageNumber=1&view=home" target="_blank">Wix</a>
+        &nbsp;
+        <a href="http://www.youtube.com/" target="_blank">Youtube</a>
+        &nbsp;
+        <a href="http://www.quizlet.com/" target="_blank">Quizlet</a>
+        <br>
+        <a href="http://moodle.sheboyganfalls.k12.wi.us/login/index.php" target="_blank">Moodle</a>
+        &nbsp;
+        <a href="http://www.pandora.com/" target="_blank">Pandora</a>
+        &nbsp;
+        <a href="http://prezi.com/" target="_blank">Prezi</a>
+        &nbsp;
+	<a href="https://groklearning.com/competition/codecomp-intermediate-2014/" target="_blank">Code.Comp</a>
+        &nbsp;
+        <a href="https://ple.platoweb.com/Account/SignIn" target="_blank">Plato</a>
+        &nbsp;
+        <a href="http://www.weather.com/weather/map/interactive/53085:4?interactiveMapLayer=radar&baseMap=r&zoom=7" target="_blank">Weather Radar</a>
+        <br>
+        <br>
+        <a href="https://sites.google.com/a/sheboyganfalls.k12.wi.us/mr-hoffmann-s-science-class/?pli=1" target="_blank">Hoffman</a>
+        &nbsp;
+        <a href="https://sites.google.com/a/sheboyganfalls.k12.wi.us/ms-clark/" target="_blank">Clark</a>
+        
+        
+        <!--&ampradic;
+        &lt;span style="text-decoration: overline"&gt;-1&lt;/span&gt;
+        &amp;#x2665;
+        Programming!
+        -->
+        </p>
+        
+        <script>
+            function deal(){
+                var y = 0;
+                var hey = setInterval(function () {updateTime()}, 1000);
+                var d = new Date();
+                var currentTime = (d.getHours()*60)+d.getMinutes()
+                if (d.getDay()==3){
+                    var times = [480,526,530,576,580,626,630,651,655,701,705,751,754,800,804,850,480];
+                }
+                else {
+                    var times = [480,530,534,560,564,614,618,668,668,694,698,748,752,802,806,856,860,910,480]
+                }
+                for (x=0;x<times.length;x++){
+                    if (currentTime>=times[x-1] && currentTime<times[x]){
+                        var start = times[x-1];
+                        var end = times[x];
+                        y=x;
+                    }
+                }
+                console.log(y);
+                if (y%2==1){
+                    var msg= "We get out of here at:";
+                    var msg2="There are";
+                    var msg3 = "Left in class";
+                }
+                else{
+                    var msg= "Class starts at:";
+                    var msg2="You have:";
+                    var msg3 = "To get to class";
+                }
+                document.getElementById("heading1").innerHTML = msg;
+                document.getElementById("heading2").innerHTML = msg2;
+                var endMin = end%60;
+                var endHour= Math.round((end-endMin)/60);
+                if (endHour>12){
+                    endHour=endHour-12;
+                }
+                document.getElementById("wgooh").innerHTML = endHour.toString() + ":" + endMin.toString();
+                function updateTime() {
+                    var d = new Date();
+                    var secLeft = 59-d.getSeconds();
+                    var minLeft = end-((d.getHours()*60)+d.getMinutes())-1;
+                    var both = (minLeft*60)+secLeft;
+		    document.getElementById("hey").innerHTML = minLeft.toString()+ " Minutes and " + secLeft.toString() + " Seconds "+msg3;
+                    document.getElementById("title").innerHTML = minLeft.toString()+" Min "+secLeft.toString() + " Sec Lynxz";
+                    if (both ==0){
+                        clearInterval(hey);
+			alert("Hey! Class is over!");
+                        deal();
+                    }
+                }
+            }
+        deal();
+            </script>
+        
+        
+        
+    </body>
+</html>
